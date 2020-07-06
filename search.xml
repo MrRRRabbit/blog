@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>github技术小册</title>
-    <url>/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/</url>
-    <content><![CDATA[<p>日常开发工作中的一些技术心得：</p>
-<p><a href="https://github.com/MrRRRabbit/daydaynote" target="_blank" rel="noopener">传送门</a></p>
+    <title>欢迎</title>
+    <url>/blog/2020/04/01/%E6%AC%A2%E8%BF%8E/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(<span class="string">"欢迎来到我的国度！！！"</span>)</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>日记</category>
       </categories>
       <tags>
-        <tag>github</tag>
-        <tag>技术</tag>
+        <tag>welcome</tag>
       </tags>
   </entry>
   <entry>
@@ -33,16 +32,17 @@
 ]]></content>
   </entry>
   <entry>
-    <title>欢迎</title>
-    <url>/blog/2020/04/01/%E6%AC%A2%E8%BF%8E/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(<span class="string">"欢迎来到我的国度！！！"</span>)</span><br></pre></td></tr></table></figure>
-
+    <title>github技术小册</title>
+    <url>/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/</url>
+    <content><![CDATA[<p>日常开发工作中的一些技术心得：</p>
+<p><a href="https://github.com/MrRRRabbit/daydaynote" target="_blank" rel="noopener">传送门</a></p>
 ]]></content>
       <categories>
         <category>日记</category>
       </categories>
       <tags>
-        <tag>welcome</tag>
+        <tag>github</tag>
+        <tag>技术</tag>
       </tags>
   </entry>
 </search>
