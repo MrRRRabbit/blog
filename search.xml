@@ -7,11 +7,40 @@
 <p><a href="https://github.com/MrRRRabbit/daydaynote" target="_blank" rel="noopener">传送门</a></p>
 ]]></content>
       <categories>
-        <category>日记</category>
+        <category>笔记</category>
       </categories>
       <tags>
         <tag>github</tag>
         <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode-面试题17.13</title>
+    <url>/blog/2020/07/09/leetcode-%E9%9D%A2%E8%AF%95%E9%A2%9817-13/</url>
+    <content><![CDATA[<blockquote>
+<p>哦，不！你不小心把一个长篇文章中的空格、标点都删掉了，并且大写也弄成了小写。像句子”I reset the computer. It still didn’t boot!”已经变成了”iresetthecomputeritstilldidntboot”。在处理标点符号和大小写之前，你得先把它断成词语。当然了，你有一本厚厚的词典dictionary，不过，有些词没在词典里。假设文章用sentence表示，设计一个算法，把文章断开，要求未识别的字符最少，返回未识别的字符数。</p>
+<p><strong>注意：</strong>本题相对原题稍作改动，只需返回未识别的字符数</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">dictionary &#x3D; [&quot;looked&quot;,&quot;just&quot;,&quot;like&quot;,&quot;her&quot;,&quot;brother&quot;]</span><br><span class="line">sentence &#x3D; &quot;jesslookedjustliketimherbrother&quot;</span><br><span class="line">输出： 7</span><br><span class="line">解释： 断句后为&quot;jess looked just like tim her brother&quot;，共7个未识别字符。</span><br></pre></td></tr></table></figure>
+
+<p>提示：</p>
+<ul>
+<li>0 &lt;= len(sentence) &lt;= 1000</li>
+<li>dictionary中总字符数不超过 150000。</li>
+<li>你可以认为dictionary和sentence中只包含小写字母。</li>
+</ul>
+</blockquote>
+<p>题解</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>思考</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>动态规划</tag>
       </tags>
   </entry>
   <entry>
@@ -39,7 +68,7 @@
 
 ]]></content>
       <categories>
-        <category>日记</category>
+        <category>笔记</category>
       </categories>
       <tags>
         <tag>welcome</tag>
