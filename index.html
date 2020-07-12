@@ -191,6 +191,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dao1to2.gitee.io/blog/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="MrRRRabbit">
+      <meta itemprop="description" content="我是在用右脑写程序啊 :P">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黑客.画家">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">动态代理-cglib与jdk方式差异解析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-12 15:49:01 / 修改时间：15:51:09" itemprop="dateCreated datePublished" datetime="2020-07-12T15:49:01+08:00">2020-07-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="两种代理模式差异"><a href="#两种代理模式差异" class="headerlink" title="两种代理模式差异"></a>两种代理模式差异</h2><table>
+<thead>
+<tr>
+<th>代理类型</th>
+<th>Cglib</th>
+<th>Jdk</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>是否需要实现接口</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>依赖</td>
+<td>需依赖cglib类库</td>
+<td>只依赖jdk</td>
+</tr>
+<tr>
+<td>字节码生成</td>
+<td>ASM框架</td>
+<td>根据Class文件的格式规范调用sun.misc.ProxyGenerator.generateProxyClass()直接拼装字节码</td>
+</tr>
+<tr>
+<td>代理方法调用</td>
+<td>FastClass机制直接调用</td>
+<td>反射机制调用</td>
+</tr>
+</tbody></table>
+<h3 id="演示demo"><a href="#演示demo" class="headerlink" title="演示demo"></a>演示demo</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Target</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">say</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TargetImpl</span> <span class="keyword">implements</span> <span class="title">Target</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdkProxy</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Target target;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">JdkProxy</span><span class="params">(Target target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Target <span class="title">newProxyInstance</span><span class="params">(Target target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (Target) Proxy</span><br><span class="line">            .newProxyInstance(JdkProxy.class.getClassLoader(), new Class[]&#123;Target.class&#125;, new JdkProxy(target));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> method.invoke(target, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CglibProxy</span> <span class="keyword">implements</span> <span class="title">MethodInterceptor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Target <span class="title">newProxyInstance</span><span class="params">(Target target)</span> </span>&#123;</span><br><span class="line">        Enhancer enhancer = <span class="keyword">new</span> Enhancer();</span><br><span class="line">        enhancer.setSuperclass(target.getClass());</span><br><span class="line">        enhancer.setCallback(<span class="keyword">new</span> CglibProxy());</span><br><span class="line">        <span class="keyword">return</span> (Target) enhancer.create();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">intercept</span><span class="params">(Object obj, Method method, Object[] args, MethodProxy proxy)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> proxy.invokeSuper(obj, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="性能差异"><a href="#性能差异" class="headerlink" title="性能差异"></a>性能差异</h2><table>
+<thead>
+<tr>
+<th>jdk版本</th>
+<th>小于1.8</th>
+<th>大于1.8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>代理创建性能</td>
+<td>Jdk &gt; Cglib</td>
+<td>Jdk &gt; Cglib</td>
+</tr>
+<tr>
+<td>代理运行性能</td>
+<td>Jdk &lt; Cglib</td>
+<td>Jdk &gt; Cglib</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://dao1to2.gitee.io/blog/2020/07/10/leetcode-309/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -639,7 +756,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -652,7 +769,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

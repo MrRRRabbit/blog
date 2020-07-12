@@ -99,4 +99,66 @@
         <tag>动态规划</tag>
       </tags>
   </entry>
+  <entry>
+    <title>动态代理-cglib与jdk方式差异解析</title>
+    <url>/blog/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<h2 id="两种代理模式差异"><a href="#两种代理模式差异" class="headerlink" title="两种代理模式差异"></a>两种代理模式差异</h2><table>
+<thead>
+<tr>
+<th>代理类型</th>
+<th>Cglib</th>
+<th>Jdk</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>是否需要实现接口</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>依赖</td>
+<td>需依赖cglib类库</td>
+<td>只依赖jdk</td>
+</tr>
+<tr>
+<td>字节码生成</td>
+<td>ASM框架</td>
+<td>根据Class文件的格式规范调用sun.misc.ProxyGenerator.generateProxyClass()直接拼装字节码</td>
+</tr>
+<tr>
+<td>代理方法调用</td>
+<td>FastClass机制直接调用</td>
+<td>反射机制调用</td>
+</tr>
+</tbody></table>
+<h3 id="演示demo"><a href="#演示demo" class="headerlink" title="演示demo"></a>演示demo</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Target</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">say</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TargetImpl</span> <span class="keyword">implements</span> <span class="title">Target</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdkProxy</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Target target;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">JdkProxy</span><span class="params">(Target target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Target <span class="title">newProxyInstance</span><span class="params">(Target target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (Target) Proxy</span><br><span class="line">            .newProxyInstance(JdkProxy.class.getClassLoader(), new Class[]&#123;Target.class&#125;, new JdkProxy(target));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> method.invoke(target, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CglibProxy</span> <span class="keyword">implements</span> <span class="title">MethodInterceptor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Target <span class="title">newProxyInstance</span><span class="params">(Target target)</span> </span>&#123;</span><br><span class="line">        Enhancer enhancer = <span class="keyword">new</span> Enhancer();</span><br><span class="line">        enhancer.setSuperclass(target.getClass());</span><br><span class="line">        enhancer.setCallback(<span class="keyword">new</span> CglibProxy());</span><br><span class="line">        <span class="keyword">return</span> (Target) enhancer.create();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">intercept</span><span class="params">(Object obj, Method method, Object[] args, MethodProxy proxy)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> proxy.invokeSuper(obj, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="性能差异"><a href="#性能差异" class="headerlink" title="性能差异"></a>性能差异</h2><table>
+<thead>
+<tr>
+<th>jdk版本</th>
+<th>小于1.8</th>
+<th>大于1.8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>代理创建性能</td>
+<td>Jdk &gt; Cglib</td>
+<td>Jdk &gt; Cglib</td>
+</tr>
+<tr>
+<td>代理运行性能</td>
+<td>Jdk &lt; Cglib</td>
+<td>Jdk &gt; Cglib</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>动态代理</tag>
+        <tag>性能</tag>
+      </tags>
+  </entry>
 </search>
