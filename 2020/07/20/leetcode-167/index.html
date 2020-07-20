@@ -20,20 +20,22 @@
     var CONFIG = {"hostname":"dao1to2.gitee.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1System.out.println(&quot;欢迎来到我的国度！！！&quot;)">
+  <meta name="description" content="给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。 说明:  返回的下标值（index1 和 index2）不是从零开始的。 你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。  示例: 123输入: numbers &#x3D; [2, 7, 11, 15],">
 <meta property="og:type" content="article">
-<meta property="og:title" content="欢迎">
-<meta property="og:url" content="https://dao1to2.gitee.io/blog/2020/04/01/%E6%AC%A2%E8%BF%8E/index.html">
+<meta property="og:title" content="leetcode-167">
+<meta property="og:url" content="https://dao1to2.gitee.io/blog/2020/07/20/leetcode-167/index.html">
 <meta property="og:site_name" content="黑客.画家">
-<meta property="og:description" content="1System.out.println(&quot;欢迎来到我的国度！！！&quot;)">
+<meta property="og:description" content="给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。 说明:  返回的下标值（index1 和 index2）不是从零开始的。 你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。  示例: 123输入: numbers &#x3D; [2, 7, 11, 15],">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-07-07T10:10:03.947Z">
+<meta property="article:published_time" content="2020-07-20T14:53:41.000Z">
+<meta property="article:modified_time" content="2020-07-20T14:56:19.751Z">
 <meta property="article:author" content="MrRRRabbit">
-<meta property="article:tag" content="welcome">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="二分查找">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://dao1to2.gitee.io/blog/2020/04/01/%E6%AC%A2%E8%BF%8E/">
+<link rel="canonical" href="https://dao1to2.gitee.io/blog/2020/07/20/leetcode-167/">
 
 
 <script id="page-configurations">
@@ -46,7 +48,7 @@
   };
 </script>
 
-  <title>欢迎 | 黑客.画家</title>
+  <title>leetcode-167 | 黑客.画家</title>
   
 
 
@@ -195,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://dao1to2.gitee.io/blog/2020/04/01/%E6%AC%A2%E8%BF%8E/">
+    <link itemprop="mainEntityOfPage" href="https://dao1to2.gitee.io/blog/2020/07/20/leetcode-167/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -208,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          欢迎
+          leetcode-167
         </h1>
 
         <div class="post-meta">
@@ -217,23 +219,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-04-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-01T00:00:00+08:00">2020-04-01</time>
+              <time title="创建时间：2020-07-20 22:53:41 / 修改时间：22:56:19" itemprop="dateCreated datePublished" datetime="2020-07-20T22:53:41+08:00">2020-07-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-07 18:10:03" itemprop="dateModified" datetime="2020-07-07T18:10:03+08:00">2020-07-07</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                  <a href="/blog/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -248,7 +244,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"欢迎来到我的国度！！！"</span>)</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。</p>
+<p>函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。</p>
+<p><strong>说明:</strong></p>
+<ul>
+<li>返回的下标值（index1 和 index2）不是从零开始的。</li>
+<li>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。</li>
+</ul>
+<p><strong>示例:</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: numbers = [2, 7, 11, 15], target = 9</span><br><span class="line">输出: [1,2]</span><br><span class="line">解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>题解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> index1 = <span class="number">0</span>, index2 = numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (index1 &lt; numbers.length - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index1 &gt;= index2) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target == numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;index1 + <span class="number">1</span>, index2 + <span class="number">1</span>&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &gt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index1++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &lt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index2--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">                                 |</span><br><span class="line">                                 |</span><br><span class="line">                                \|/</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> index1 = <span class="number">0</span>, index2 = numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (index1 &lt; index2) &#123;</span><br><span class="line">            <span class="keyword">if</span> (target == numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;index1 + <span class="number">1</span>, index2 + <span class="number">1</span>&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &gt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index1++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &lt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index2--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>思考</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">以上两种遍历方式，虽然在循环跳出的条件上有所差异，但是理论上找到解的遍历次数应该是相同的，但是在LeetCode提交后两者的执行耗时确有差别，解法1更加耗时，为什么？</span><br><span class="line">ps：此种情况不是必现，只有在某些testCase下复现，应该是在数组数量很多，且出现极端情况，遍历次数想多较多的时候，才会出现</span><br><span class="line"></span><br><span class="line">个人猜测是由于解法1比叫法2要多一段判断逻辑，这种微小的开销在遍历次数很少的情况下，可以忽略，但是在遍历很多次的情况下，这种开销会被放大，导致两者的耗时有差异</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -259,7 +270,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/welcome/" rel="tag"># welcome</a>
+              <a href="/blog/tags/leetcode/" rel="tag"># leetcode</a>
+              <a href="/blog/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag"># 双指针</a>
+              <a href="/blog/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag"># 二分查找</a>
           </div>
 
         
@@ -268,13 +281,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2020/03/31/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/blog/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/" rel="prev" title="动态代理-cglib与jdk方式差异解析">
+      <i class="fa fa-chevron-left"></i> 动态代理-cglib与jdk方式差异解析
     </a></div>
-      <div class="post-nav-item">
-    <a href="/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/" rel="next" title="github技术小册">
-      github技术小册 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
