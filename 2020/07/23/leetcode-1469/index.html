@@ -20,21 +20,26 @@
     var CONFIG = {"hostname":"dao1to2.gitee.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="哦，不！你不小心把一个长篇文章中的空格、标点都删掉了，并且大写也弄成了小写。像句子”I reset the computer. It still didn’t boot!”已经变成了”iresetthecomputeritstilldidntboot”。在处理标点符号和大小写之前，你得先把它断成词语。当然了，你有一本厚厚的词典dictionary，不过，有些词没在词典里。假设文章用sentenc">
+  <meta name="description" content="二叉树中，如果一个节点是其父节点的唯一子节点，则称这样的节点为 “独生节点” 。二叉树的根节点不会是独生节点，因为它没有父节点。 给定一棵二叉树的根节点 root ，返回树中 所有的独生节点的值所构成的数组 。数组的顺序 不限 。 示例 1：  12345输入：root &#x3D; [1,2,3,null,4]输出：[4]解释：浅蓝色的节点是唯一的独生节点。节点 1 是根节点，不是独生的。节点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode-面试题17.13">
-<meta property="og:url" content="https://dao1to2.gitee.io/blog/2020/07/09/leetcode-%E9%9D%A2%E8%AF%95%E9%A2%9817-13/index.html">
+<meta property="og:title" content="leetcode-1469">
+<meta property="og:url" content="https://dao1to2.gitee.io/blog/2020/07/23/leetcode-1469/index.html">
 <meta property="og:site_name" content="黑客.画家">
-<meta property="og:description" content="哦，不！你不小心把一个长篇文章中的空格、标点都删掉了，并且大写也弄成了小写。像句子”I reset the computer. It still didn’t boot!”已经变成了”iresetthecomputeritstilldidntboot”。在处理标点符号和大小写之前，你得先把它断成词语。当然了，你有一本厚厚的词典dictionary，不过，有些词没在词典里。假设文章用sentenc">
+<meta property="og:description" content="二叉树中，如果一个节点是其父节点的唯一子节点，则称这样的节点为 “独生节点” 。二叉树的根节点不会是独生节点，因为它没有父节点。 给定一棵二叉树的根节点 root ，返回树中 所有的独生节点的值所构成的数组 。数组的顺序 不限 。 示例 1：  12345输入：root &#x3D; [1,2,3,null,4]输出：[4]解释：浅蓝色的节点是唯一的独生节点。节点 1 是根节点，不是独生的。节点">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-09T10:49:48.000Z">
-<meta property="article:modified_time" content="2020-07-09T10:50:55.142Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gh0qftdoiyj305n05mjra.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gh0qgr52kwj30ca07umx9.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gh0qh2ajh0j30a305mq2z.jpg">
+<meta property="article:published_time" content="2020-07-23T03:55:12.000Z">
+<meta property="article:modified_time" content="2020-07-23T03:56:09.356Z">
 <meta property="article:author" content="MrRRRabbit">
 <meta property="article:tag" content="leetcode">
-<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="递归">
+<meta property="article:tag" content="二叉树">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gh0qftdoiyj305n05mjra.jpg">
 
-<link rel="canonical" href="https://dao1to2.gitee.io/blog/2020/07/09/leetcode-%E9%9D%A2%E8%AF%95%E9%A2%9817-13/">
+<link rel="canonical" href="https://dao1to2.gitee.io/blog/2020/07/23/leetcode-1469/">
 
 
 <script id="page-configurations">
@@ -47,7 +52,7 @@
   };
 </script>
 
-  <title>leetcode-面试题17.13 | 黑客.画家</title>
+  <title>leetcode-1469 | 黑客.画家</title>
   
 
 
@@ -196,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://dao1to2.gitee.io/blog/2020/07/09/leetcode-%E9%9D%A2%E8%AF%95%E9%A2%9817-13/">
+    <link itemprop="mainEntityOfPage" href="https://dao1to2.gitee.io/blog/2020/07/23/leetcode-1469/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -209,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          leetcode-面试题17.13
+          leetcode-1469
         </h1>
 
         <div class="post-meta">
@@ -220,7 +225,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-07-09 18:49:48 / 修改时间：18:50:55" itemprop="dateCreated datePublished" datetime="2020-07-09T18:49:48+08:00">2020-07-09</time>
+              <time title="创建时间：2020-07-23 11:55:12 / 修改时间：11:56:09" itemprop="dateCreated datePublished" datetime="2020-07-23T11:55:12+08:00">2020-07-23</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,22 +249,35 @@
 
       
         <blockquote>
-<p>哦，不！你不小心把一个长篇文章中的空格、标点都删掉了，并且大写也弄成了小写。像句子”I reset the computer. It still didn’t boot!”已经变成了”iresetthecomputeritstilldidntboot”。在处理标点符号和大小写之前，你得先把它断成词语。当然了，你有一本厚厚的词典dictionary，不过，有些词没在词典里。假设文章用sentence表示，设计一个算法，把文章断开，要求未识别的字符最少，返回未识别的字符数。</p>
-<p><strong>注意：</strong>本题相对原题稍作改动，只需返回未识别的字符数</p>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">dictionary &#x3D; [&quot;looked&quot;,&quot;just&quot;,&quot;like&quot;,&quot;her&quot;,&quot;brother&quot;]</span><br><span class="line">sentence &#x3D; &quot;jesslookedjustliketimherbrother&quot;</span><br><span class="line">输出： 7</span><br><span class="line">解释： 断句后为&quot;jess looked just like tim her brother&quot;，共7个未识别字符。</span><br></pre></td></tr></table></figure>
+<p>二叉树中，如果一个节点是其父节点的唯一子节点，则称这样的节点为 “<strong>独生节点</strong>” 。二叉树的根节点不会是独生节点，因为它没有父节点。</p>
+<p>给定一棵二叉树的根节点 <code>root</code> ，返回树中 <strong>所有的独生节点的值所构成的数组</strong> 。数组的顺序 <strong>不限</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh0qftdoiyj305n05mjra.jpg" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：root &#x3D; [1,2,3,null,4]</span><br><span class="line">输出：[4]</span><br><span class="line">解释：浅蓝色的节点是唯一的独生节点。</span><br><span class="line">节点 1 是根节点，不是独生的。</span><br><span class="line">节点 2 和 3 有共同的父节点，所以它们都不是独生的。</span><br></pre></td></tr></table></figure>
 
-<p>提示：</p>
+<p><strong>示例 2：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh0qgr52kwj30ca07umx9.jpg" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：root &#x3D; [7,1,4,6,null,5,3,null,null,null,null,null,2]</span><br><span class="line">输出：[6,2]</span><br><span class="line">输出：浅蓝色的节点是独生节点。</span><br><span class="line">请谨记，顺序是不限的。 [2,6] 也是一种可接受的答案。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh0qh2ajh0j30a305mq2z.jpg" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：root &#x3D; [11,99,88,77,null,null,66,55,null,null,44,33,null,null,22]</span><br><span class="line">输出：[77,55,33,66,44,22]</span><br><span class="line">解释：节点 99 和 88 有共同的父节点，节点 11 是根节点。</span><br><span class="line">其他所有节点都是独生节点。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：root &#x3D; [197]</span><br><span class="line">输出：[]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 5：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：root &#x3D; [31,null,78,null,28]</span><br><span class="line">输出：[78,28]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
-<li>0 &lt;= len(sentence) &lt;= 1000</li>
-<li>dictionary中总字符数不超过 150000。</li>
-<li>你可以认为dictionary和sentence中只包含小写字母。</li>
+<li><code>tree</code> 中节点个数的取值范围是 <code>[1, 1000]</code>。</li>
+<li>每个节点的值的取值范围是 <code>[1, 10^6]</code>。</li>
 </ul>
 </blockquote>
 <p>题解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getLonelyNodes</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; results = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> results;</span><br><span class="line">        &#125;</span><br><span class="line">        fetchNode(root, results);</span><br><span class="line">        <span class="keyword">return</span> results;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fetchNode</span><span class="params">(TreeNode node, List&lt;Integer&gt; results)</span> </span>&#123;</span><br><span class="line">        TreeNode left = node.left;</span><br><span class="line">        TreeNode right = node.right;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(left) &amp;&amp; !Objects.isNull(right)) &#123;</span><br><span class="line">            results.add(right.val);</span><br><span class="line">            fetchNode(right, results);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(left) &amp;&amp; Objects.isNull(right)) &#123;</span><br><span class="line">            results.add(left.val);</span><br><span class="line">            fetchNode(left, results);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(left) &amp;&amp; !Objects.isNull(right)) &#123;</span><br><span class="line">            fetchNode(right, results);</span><br><span class="line">            fetchNode(left, results);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> val;</span><br><span class="line">    <span class="keyword">private</span> TreeNode left;</span><br><span class="line">    <span class="keyword">private</span> TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="keyword">int</span> val) &#123;</span><br><span class="line">        <span class="keyword">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="keyword">int</span> val, TreeNode left, TreeNode right) &#123;</span><br><span class="line">        <span class="keyword">this</span>.val = val;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>思考</p>
 
     </div>
 
@@ -270,7 +288,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/blog/tags/leetcode/" rel="tag"># leetcode</a>
-              <a href="/blog/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag"># 动态规划</a>
+              <a href="/blog/tags/%E9%80%92%E5%BD%92/" rel="tag"># 递归</a>
+              <a href="/blog/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag"># 二叉树</a>
           </div>
 
         
@@ -279,13 +298,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/" rel="prev" title="github技术小册">
-      <i class="fa fa-chevron-left"></i> github技术小册
+    <a href="/blog/2020/07/20/leetcode-167/" rel="prev" title="leetcode-167">
+      <i class="fa fa-chevron-left"></i> leetcode-167
     </a></div>
-      <div class="post-nav-item">
-    <a href="/blog/2020/07/10/leetcode-309/" rel="next" title="leetcode-309">
-      leetcode-309 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     

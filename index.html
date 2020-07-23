@@ -191,6 +191,103 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dao1to2.gitee.io/blog/2020/07/23/leetcode-1469/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.png">
+      <meta itemprop="name" content="MrRRRabbit">
+      <meta itemprop="description" content="我是在用右脑写程序啊 :P">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黑客.画家">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/07/23/leetcode-1469/" class="post-title-link" itemprop="url">leetcode-1469</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-23 11:55:12 / 修改时间：11:56:09" itemprop="dateCreated datePublished" datetime="2020-07-23T11:55:12+08:00">2020-07-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>二叉树中，如果一个节点是其父节点的唯一子节点，则称这样的节点为 “<strong>独生节点</strong>” 。二叉树的根节点不会是独生节点，因为它没有父节点。</p>
+<p>给定一棵二叉树的根节点 <code>root</code> ，返回树中 <strong>所有的独生节点的值所构成的数组</strong> 。数组的顺序 <strong>不限</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh0qftdoiyj305n05mjra.jpg" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：root &#x3D; [1,2,3,null,4]</span><br><span class="line">输出：[4]</span><br><span class="line">解释：浅蓝色的节点是唯一的独生节点。</span><br><span class="line">节点 1 是根节点，不是独生的。</span><br><span class="line">节点 2 和 3 有共同的父节点，所以它们都不是独生的。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh0qgr52kwj30ca07umx9.jpg" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：root &#x3D; [7,1,4,6,null,5,3,null,null,null,null,null,2]</span><br><span class="line">输出：[6,2]</span><br><span class="line">输出：浅蓝色的节点是独生节点。</span><br><span class="line">请谨记，顺序是不限的。 [2,6] 也是一种可接受的答案。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh0qh2ajh0j30a305mq2z.jpg" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：root &#x3D; [11,99,88,77,null,null,66,55,null,null,44,33,null,null,22]</span><br><span class="line">输出：[77,55,33,66,44,22]</span><br><span class="line">解释：节点 99 和 88 有共同的父节点，节点 11 是根节点。</span><br><span class="line">其他所有节点都是独生节点。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 4：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：root &#x3D; [197]</span><br><span class="line">输出：[]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 5：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：root &#x3D; [31,null,78,null,28]</span><br><span class="line">输出：[78,28]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>tree</code> 中节点个数的取值范围是 <code>[1, 1000]</code>。</li>
+<li>每个节点的值的取值范围是 <code>[1, 10^6]</code>。</li>
+</ul>
+</blockquote>
+<p>题解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getLonelyNodes</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; results = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> results;</span><br><span class="line">        &#125;</span><br><span class="line">        fetchNode(root, results);</span><br><span class="line">        <span class="keyword">return</span> results;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fetchNode</span><span class="params">(TreeNode node, List&lt;Integer&gt; results)</span> </span>&#123;</span><br><span class="line">        TreeNode left = node.left;</span><br><span class="line">        TreeNode right = node.right;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(left) &amp;&amp; !Objects.isNull(right)) &#123;</span><br><span class="line">            results.add(right.val);</span><br><span class="line">            fetchNode(right, results);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(left) &amp;&amp; Objects.isNull(right)) &#123;</span><br><span class="line">            results.add(left.val);</span><br><span class="line">            fetchNode(left, results);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(left) &amp;&amp; !Objects.isNull(right)) &#123;</span><br><span class="line">            fetchNode(right, results);</span><br><span class="line">            fetchNode(left, results);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> val;</span><br><span class="line">    <span class="keyword">private</span> TreeNode left;</span><br><span class="line">    <span class="keyword">private</span> TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="keyword">int</span> val) &#123;</span><br><span class="line">        <span class="keyword">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="keyword">int</span> val, TreeNode left, TreeNode right) &#123;</span><br><span class="line">        <span class="keyword">this</span>.val = val;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://dao1to2.gitee.io/blog/2020/07/20/leetcode-167/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -840,7 +937,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -853,7 +950,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
