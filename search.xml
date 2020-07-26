@@ -234,4 +234,28 @@
         <tag>二叉树</tag>
       </tags>
   </entry>
+  <entry>
+    <title>leetcode-04.02</title>
+    <url>/blog/2020/07/27/leetcode-04-02/</url>
+    <content><![CDATA[<blockquote>
+<p>给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。</p>
+<p><strong>示例:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定有序数组: [-10,-3,0,5,9],</span><br><span class="line"></span><br><span class="line">一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      0 </span><br><span class="line">     &#x2F; \ </span><br><span class="line">   -3   9 </span><br><span class="line">   &#x2F;   &#x2F; </span><br><span class="line"> -10  5 </span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>题解</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">sortedArrayToBST</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> buildNode(<span class="number">0</span>, nums.length - <span class="number">1</span>, nums);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">buildNode</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span> end, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (begin == end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> TreeNode(nums[end]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (begin &gt; end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> midIndex = (begin + end + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(nums[midIndex]);</span><br><span class="line">        node.left = buildNode(begin, midIndex - <span class="number">1</span>, nums);</span><br><span class="line">        node.right = buildNode(midIndex + <span class="number">1</span>, end, nums);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>思考</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 在求数组的中位索引的时候，主要在begin和end这两个索引在求和为奇数的时，会导致最后生成的BST的某个子树的左节点大于右节点，因此在求中位索引的时候，需要在begin和end求和基础上再加1再求中位索引</span><br><span class="line">2. 在使用递归生成左右子节点的时候，方法入参的begin和end都需要注意排除已经成为节点的数的索引</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>递归</tag>
+        <tag>二叉树</tag>
+      </tags>
+  </entry>
 </search>
