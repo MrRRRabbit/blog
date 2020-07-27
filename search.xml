@@ -258,4 +258,37 @@
         <tag>二叉树</tag>
       </tags>
   </entry>
+  <entry>
+    <title>leetcode-offer27</title>
+    <url>/blog/2020/07/27/leetcode-offer27/</url>
+    <content><![CDATA[<blockquote>
+<p>请完成一个函数，输入一个二叉树，该函数输出它的镜像。</p>
+<p><strong>例如输入：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">        4</span><br><span class="line">      &#x2F;   \</span><br><span class="line">    2     7</span><br><span class="line">  &#x2F; \   &#x2F; \</span><br><span class="line">1   3 6   9</span><br></pre></td></tr></table></figure>
+
+<p><strong>镜像输出：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">        4</span><br><span class="line">      &#x2F;   \</span><br><span class="line">    7     2</span><br><span class="line">  &#x2F; \   &#x2F; \</span><br><span class="line">9   6 3   1</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root &#x3D; [4,2,7,1,3,6,9]</span><br><span class="line">输出：[4,7,2,9,6,3,1]</span><br></pre></td></tr></table></figure>
+
+<p><strong>限制：</strong></p>
+<p><code>0 &lt;= 节点个数 &lt;= 1000</code></p>
+</blockquote>
+<p>题解</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">mirrorTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root.left) &amp;&amp; Objects.isNull(root.right)) &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode temp = root.left;</span><br><span class="line">        root.left = root.right;</span><br><span class="line">        root.right = temp;</span><br><span class="line">        mirrorTree(root.left);</span><br><span class="line">        mirrorTree(root.right);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>递归</tag>
+        <tag>二叉树</tag>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
 </search>
