@@ -20,21 +20,26 @@
     var CONFIG = {"hostname":"dao1to2.gitee.io","root":"/blog/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="日常开发工作中的一些技术心得： 传送门">
+  <meta name="description" content="输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。 例如： 给定二叉树 [3,9,20,null,null,15,7]， 12345   3  &#x2F; \9  20   &#x2F;  \  15   7   返回它的最大深度 3 。 提示： 节点总数 &lt;&#x3D; 10000  题解 12345678910111">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github技术小册">
-<meta property="og:url" content="https://dao1to2.gitee.io/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/index.html">
+<meta property="og:title" content="leetcode-offer55-I">
+<meta property="og:url" content="https://dao1to2.gitee.io/blog/2020/07/27/leetcode-offer55-I/index.html">
 <meta property="og:site_name" content="黑客.画家">
-<meta property="og:description" content="日常开发工作中的一些技术心得： 传送门">
+<meta property="og:description" content="输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。 例如： 给定二叉树 [3,9,20,null,null,15,7]， 12345   3  &#x2F; \9  20   &#x2F;  \  15   7   返回它的最大深度 3 。 提示： 节点总数 &lt;&#x3D; 10000  题解 12345678910111">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-07T02:46:04.000Z">
-<meta property="article:modified_time" content="2020-07-07T10:09:13.193Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gh5ojez1eyj30tt0me75j.jpg">
+<meta property="article:published_time" content="2020-07-27T14:05:08.000Z">
+<meta property="article:modified_time" content="2020-07-27T14:09:59.558Z">
 <meta property="article:author" content="MrRRRabbit">
-<meta property="article:tag" content="github">
-<meta property="article:tag" content="技术">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="二叉树">
+<meta property="article:tag" content="DFS">
+<meta property="article:tag" content="BFS">
+<meta property="article:tag" content="后序遍历">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gh5ojez1eyj30tt0me75j.jpg">
 
-<link rel="canonical" href="https://dao1to2.gitee.io/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/">
+<link rel="canonical" href="https://dao1to2.gitee.io/blog/2020/07/27/leetcode-offer55-I/">
 
 
 <script id="page-configurations">
@@ -47,7 +52,7 @@
   };
 </script>
 
-  <title>github技术小册 | 黑客.画家</title>
+  <title>leetcode-offer55-I | 黑客.画家</title>
   
 
 
@@ -196,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://dao1to2.gitee.io/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/">
+    <link itemprop="mainEntityOfPage" href="https://dao1to2.gitee.io/blog/2020/07/27/leetcode-offer55-I/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -209,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          github技术小册
+          leetcode-offer55-I
         </h1>
 
         <div class="post-meta">
@@ -218,23 +223,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-04-07 10:46:04" itemprop="dateCreated datePublished" datetime="2020-04-07T10:46:04+08:00">2020-04-07</time>
+              <time title="创建时间：2020-07-27 22:05:08 / 修改时间：22:09:59" itemprop="dateCreated datePublished" datetime="2020-07-27T22:05:08+08:00">2020-07-27</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-07 18:09:13" itemprop="dateModified" datetime="2020-07-07T18:09:13+08:00">2020-07-07</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                  <a href="/blog/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -249,8 +248,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>日常开发工作中的一些技术心得：</p>
-<p><a href="https://github.com/MrRRRabbit/daydaynote" target="_blank" rel="noopener">传送门</a></p>
+        <blockquote>
+<p>输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。</p>
+<p>例如：</p>
+<p>给定二叉树 <code>[3,9,20,null,null,15,7]</code>，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   3</span><br><span class="line">  &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">   &#x2F;  \</span><br><span class="line">  15   7</span><br></pre></td></tr></table></figure>
+
+
+<p>返回它的最大深度 3 。</p>
+<p><strong>提示：</strong></p>
+<p><code>节点总数 &lt;= 10000</code></p>
+</blockquote>
+<p>题解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> leftDepth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(root.left)) &#123;</span><br><span class="line">            leftDepth = maxDepth(root.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> rightDepth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(root.right)) &#123;</span><br><span class="line">            rightDepth = maxDepth(root.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> rootDepth = Math.max(leftDepth, rightDepth) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> rootDepth;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">                                   |</span><br><span class="line">                                   |</span><br><span class="line">                                  \|/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        LinkedList&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList();</span><br><span class="line">        queue.offer(root);</span><br><span class="line">        <span class="keyword">int</span> maxDepth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> size = queue.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">                TreeNode node = queue.poll();</span><br><span class="line">                <span class="keyword">if</span> (!Objects.isNull(node.left)) &#123;</span><br><span class="line">                    queue.offer(node.left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (!Objects.isNull(node.right)) &#123;</span><br><span class="line">                    queue.offer(node.right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            maxDepth++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxDepth;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>思考</p>
+<p>树的遍历可分为，其中前三种为DFS（深度优先搜索），最后一种为BFS（广度优先搜索）</p>
+<ol>
+<li>前序遍历：根结点 –&gt; 左子树 –&gt; 右子树</li>
+<li>中序遍历：左子树 –&gt; 根结点 –&gt; 右子树</li>
+<li>后序遍历：左子树 –&gt; 右子树 –&gt; 根结点</li>
+<li>层次遍历：只需按层次遍历即可</li>
+</ol>
+<p><strong>题解1</strong> 采用DFS深度优先搜索对树进行后序遍历，参考下列示意图</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh5ojez1eyj30tt0me75j.jpg" alt="Picture1.png"></p>
+<p><strong>题解2</strong> 采用BFS，需要借助队列，逐层遍历，每遍历完一层，深度加1，空间复杂度稍高</p>
 
     </div>
 
@@ -260,8 +282,11 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/github/" rel="tag"># github</a>
-              <a href="/blog/tags/%E6%8A%80%E6%9C%AF/" rel="tag"># 技术</a>
+              <a href="/blog/tags/leetcode/" rel="tag"># leetcode</a>
+              <a href="/blog/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag"># 二叉树</a>
+              <a href="/blog/tags/DFS/" rel="tag"># DFS</a>
+              <a href="/blog/tags/BFS/" rel="tag"># BFS</a>
+              <a href="/blog/tags/%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" rel="tag"># 后序遍历</a>
           </div>
 
         
@@ -270,13 +295,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2020/04/01/%E6%AC%A2%E8%BF%8E/" rel="prev" title="欢迎">
-      <i class="fa fa-chevron-left"></i> 欢迎
+    <a href="/blog/2020/07/27/leetcode-offer27/" rel="prev" title="leetcode-offer27">
+      <i class="fa fa-chevron-left"></i> leetcode-offer27
     </a></div>
-      <div class="post-nav-item">
-    <a href="/blog/2020/07/09/leetcode-%E9%9D%A2%E8%AF%95%E9%A2%9817-13/" rel="next" title="leetcode-面试题17.13">
-      leetcode-面试题17.13 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
