@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>github技术小册</title>
+    <url>/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/</url>
+    <content><![CDATA[<p>日常开发工作中的一些技术心得：</p>
+<p><a href="https://github.com/MrRRRabbit/daydaynote" target="_blank" rel="noopener">传送门</a></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/blog/2020/03/31/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>leetcode-04.02</title>
     <url>/blog/2020/07/27/leetcode-04-02/</url>
     <content><![CDATA[<blockquote>
@@ -25,22 +57,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/blog/2020/03/31/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <title>leetcode-167</title>
+    <url>/blog/2020/07/20/leetcode-167/</url>
+    <content><![CDATA[<blockquote>
+<p>给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。</p>
+<p>函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。</p>
+<p><strong>说明:</strong></p>
+<ul>
+<li>返回的下标值（index1 和 index2）不是从零开始的。</li>
+<li>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。</li>
+</ul>
+<p><strong>示例:</strong></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">输入: numbers = [2, 7, 11, 15], target = 9</span><br><span class="line">输出: [1,2]</span><br><span class="line">解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>题解</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> index1 = <span class="number">0</span>, index2 = numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (index1 &lt; numbers.length - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index1 &gt;= index2) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target == numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;index1 + <span class="number">1</span>, index2 + <span class="number">1</span>&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &gt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index1++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &lt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index2--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">                                 |</span><br><span class="line">                                 |</span><br><span class="line">                                \|/</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> index1 = <span class="number">0</span>, index2 = numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (index1 &lt; index2) &#123;</span><br><span class="line">            <span class="keyword">if</span> (target == numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;index1 + <span class="number">1</span>, index2 + <span class="number">1</span>&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &gt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index1++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &lt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index2--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>思考</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">以上两种遍历方式，虽然在循环跳出的条件上有所差异，但是理论上找到解的遍历次数应该是相同的，但是在LeetCode提交后两者的执行耗时确有差别，解法1更加耗时，为什么？</span><br><span class="line">ps：此种情况不是必现，只有在某些testCase下复现，应该是在数组数量很多，且出现极端情况，遍历次数想多较多的时候，才会出现</span><br><span class="line"></span><br><span class="line">个人猜测是由于解法1比叫法2要多一段判断逻辑，这种微小的开销在遍历次数很少的情况下，可以忽略，但是在遍历很多次的情况下，这种开销会被放大，导致两者的耗时有差异</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>双指针</tag>
+        <tag>二分查找</tag>
+      </tags>
   </entry>
   <entry>
     <title>leetcode-1469</title>
@@ -86,53 +130,19 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode-167</title>
-    <url>/blog/2020/07/20/leetcode-167/</url>
+    <title>leetcode-309</title>
+    <url>/blog/2020/07/10/leetcode-309/</url>
     <content><![CDATA[<blockquote>
-<p>给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。</p>
-<p>函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。</p>
-<p><strong>说明:</strong></p>
+<p>给定一个整数数组，其中第 i 个元素代表了第 i 天的股票价格 。</p>
+<p>设计一个算法计算出最大利润。在满足以下约束条件下，你可以尽可能地完成更多的交易（多次买卖一支股票）:</p>
 <ul>
-<li>返回的下标值（index1 和 index2）不是从零开始的。</li>
-<li>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。</li>
+<li>你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</li>
+<li>卖出股票后，你无法在第二天买入股票 (即冷冻期为 1 天)。<br>示例:</li>
 </ul>
-<p><strong>示例:</strong></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">输入: numbers = [2, 7, 11, 15], target = 9</span><br><span class="line">输出: [1,2]</span><br><span class="line">解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3,0,2]</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 对应的交易状态为: [买入, 卖出, 冷冻期, 买入, 卖出]</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>题解</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> index1 = <span class="number">0</span>, index2 = numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (index1 &lt; numbers.length - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index1 &gt;= index2) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target == numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;index1 + <span class="number">1</span>, index2 + <span class="number">1</span>&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &gt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index1++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &lt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index2--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">                                 |</span><br><span class="line">                                 |</span><br><span class="line">                                \|/</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> index1 = <span class="number">0</span>, index2 = numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (index1 &lt; index2) &#123;</span><br><span class="line">            <span class="keyword">if</span> (target == numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;index1 + <span class="number">1</span>, index2 + <span class="number">1</span>&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &gt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index1++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (target &lt; numbers[index1] + numbers[index2]) &#123;</span><br><span class="line">                index2--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>思考</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">以上两种遍历方式，虽然在循环跳出的条件上有所差异，但是理论上找到解的遍历次数应该是相同的，但是在LeetCode提交后两者的执行耗时确有差别，解法1更加耗时，为什么？</span><br><span class="line">ps：此种情况不是必现，只有在某些testCase下复现，应该是在数组数量很多，且出现极端情况，遍历次数想多较多的时候，才会出现</span><br><span class="line"></span><br><span class="line">个人猜测是由于解法1比叫法2要多一段判断逻辑，这种微小的开销在遍历次数很少的情况下，可以忽略，但是在遍历很多次的情况下，这种开销会被放大，导致两者的耗时有差异</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-        <tag>双指针</tag>
-        <tag>二分查找</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode-面试题17.13</title>
-    <url>/blog/2020/07/09/leetcode-%E9%9D%A2%E8%AF%95%E9%A2%9817-13/</url>
-    <content><![CDATA[<blockquote>
-<p>哦，不！你不小心把一个长篇文章中的空格、标点都删掉了，并且大写也弄成了小写。像句子”I reset the computer. It still didn’t boot!”已经变成了”iresetthecomputeritstilldidntboot”。在处理标点符号和大小写之前，你得先把它断成词语。当然了，你有一本厚厚的词典dictionary，不过，有些词没在词典里。假设文章用sentence表示，设计一个算法，把文章断开，要求未识别的字符最少，返回未识别的字符数。</p>
-<p><strong>注意：</strong>本题相对原题稍作改动，只需返回未识别的字符数</p>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">dictionary &#x3D; [&quot;looked&quot;,&quot;just&quot;,&quot;like&quot;,&quot;her&quot;,&quot;brother&quot;]</span><br><span class="line">sentence &#x3D; &quot;jesslookedjustliketimherbrother&quot;</span><br><span class="line">输出： 7</span><br><span class="line">解释： 断句后为&quot;jess looked just like tim her brother&quot;，共7个未识别字符。</span><br></pre></td></tr></table></figure>
-
-<p>提示：</p>
-<ul>
-<li>0 &lt;= len(sentence) &lt;= 1000</li>
-<li>dictionary中总字符数不超过 150000。</li>
-<li>你可以认为dictionary和sentence中只包含小写字母。</li>
-</ul>
-</blockquote>
-<p>题解</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>思考</p>
 ]]></content>
@@ -218,33 +228,23 @@
       </tags>
   </entry>
   <entry>
-    <title>github技术小册</title>
-    <url>/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/</url>
-    <content><![CDATA[<p>日常开发工作中的一些技术心得：</p>
-<p><a href="https://github.com/MrRRRabbit/daydaynote" target="_blank" rel="noopener">传送门</a></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-        <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode-309</title>
-    <url>/blog/2020/07/10/leetcode-309/</url>
+    <title>leetcode-面试题17.13</title>
+    <url>/blog/2020/07/09/leetcode-%E9%9D%A2%E8%AF%95%E9%A2%9817-13/</url>
     <content><![CDATA[<blockquote>
-<p>给定一个整数数组，其中第 i 个元素代表了第 i 天的股票价格 。</p>
-<p>设计一个算法计算出最大利润。在满足以下约束条件下，你可以尽可能地完成更多的交易（多次买卖一支股票）:</p>
+<p>哦，不！你不小心把一个长篇文章中的空格、标点都删掉了，并且大写也弄成了小写。像句子”I reset the computer. It still didn’t boot!”已经变成了”iresetthecomputeritstilldidntboot”。在处理标点符号和大小写之前，你得先把它断成词语。当然了，你有一本厚厚的词典dictionary，不过，有些词没在词典里。假设文章用sentence表示，设计一个算法，把文章断开，要求未识别的字符最少，返回未识别的字符数。</p>
+<p><strong>注意：</strong>本题相对原题稍作改动，只需返回未识别的字符数</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">dictionary &#x3D; [&quot;looked&quot;,&quot;just&quot;,&quot;like&quot;,&quot;her&quot;,&quot;brother&quot;]</span><br><span class="line">sentence &#x3D; &quot;jesslookedjustliketimherbrother&quot;</span><br><span class="line">输出： 7</span><br><span class="line">解释： 断句后为&quot;jess looked just like tim her brother&quot;，共7个未识别字符。</span><br></pre></td></tr></table></figure>
+
+<p>提示：</p>
 <ul>
-<li>你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</li>
-<li>卖出股票后，你无法在第二天买入股票 (即冷冻期为 1 天)。<br>示例:</li>
+<li>0 &lt;= len(sentence) &lt;= 1000</li>
+<li>dictionary中总字符数不超过 150000。</li>
+<li>你可以认为dictionary和sentence中只包含小写字母。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3,0,2]</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 对应的交易状态为: [买入, 卖出, 冷冻期, 买入, 卖出]</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>题解</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>思考</p>
 ]]></content>
