@@ -23,7 +23,7 @@
   <meta name="description" content="两种代理模式差异   代理类型 Cglib Jdk    是否需要实现接口 否 是   依赖 需依赖cglib类库 只依赖jdk   字节码生成 ASM框架 根据Class文件的格式规范调用sun.misc.ProxyGenerator.generateProxyClass()直接拼装字节码   代理方法调用 FastClass机制直接调用 反射机制调用   演示demo1234567891011">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态代理-cglib与jdk方式差异解析">
-<meta property="og:url" content="http://mrrrrabbit.github.io/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/index.html">
+<meta property="og:url" content="http://mrrrrabbit.github.io/blog/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="黑客.画家">
 <meta property="og:description" content="两种代理模式差异   代理类型 Cglib Jdk    是否需要实现接口 否 是   依赖 需依赖cglib类库 只依赖jdk   字节码生成 ASM框架 根据Class文件的格式规范调用sun.misc.ProxyGenerator.generateProxyClass()直接拼装字节码   代理方法调用 FastClass机制直接调用 反射机制调用   演示demo1234567891011">
 <meta property="og:locale" content="zh_CN">
@@ -34,7 +34,7 @@
 <meta property="article:tag" content="性能">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://mrrrrabbit.github.io/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/">
+<link rel="canonical" href="http://mrrrrabbit.github.io/blog/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/">
 
 
 <script id="page-configurations">
@@ -196,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrrrrabbit.github.io/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/">
+    <link itemprop="mainEntityOfPage" href="http://mrrrrabbit.github.io/blog/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.png">
@@ -530,7 +530,7 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://mrrrrabbit.github.io/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/";
+    this.page.url = "http://mrrrrabbit.github.io/blog/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/";
     this.page.identifier = "2020/07/12/动态代理-cglib与jdk方式差异解析/";
     this.page.title = "动态代理-cglib与jdk方式差异解析";
     };
