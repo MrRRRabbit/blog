@@ -15,6 +15,30 @@
       </tags>
   </entry>
   <entry>
+    <title>leetcode-04.02</title>
+    <url>/blog/2020/07/27/leetcode-04-02/</url>
+    <content><![CDATA[<blockquote>
+<p>给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。</p>
+<p><strong>示例:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定有序数组: [-10,-3,0,5,9],</span><br><span class="line"></span><br><span class="line">一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      0 </span><br><span class="line">     &#x2F; \ </span><br><span class="line">   -3   9 </span><br><span class="line">   &#x2F;   &#x2F; </span><br><span class="line"> -10  5 </span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>题解</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">sortedArrayToBST</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> buildNode(<span class="number">0</span>, nums.length - <span class="number">1</span>, nums);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">buildNode</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span> end, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (begin == end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> TreeNode(nums[end]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (begin &gt; end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> midIndex = (begin + end + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(nums[midIndex]);</span><br><span class="line">        node.left = buildNode(begin, midIndex - <span class="number">1</span>, nums);</span><br><span class="line">        node.right = buildNode(midIndex + <span class="number">1</span>, end, nums);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>思考</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 在求数组的中位索引的时候，主要在begin和end这两个索引在求和为奇数的时，会导致最后生成的BST的某个子树的左节点大于右节点，因此在求中位索引的时候，需要在begin和end求和基础上再加1再求中位索引</span><br><span class="line">2. 在使用递归生成左右子节点的时候，方法入参的begin和end都需要注意排除已经成为节点的数的索引</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>递归</tag>
+        <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/blog/2020/03/31/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -57,9 +81,9 @@
         <category>算法</category>
       </categories>
       <tags>
+        <tag>leetcode</tag>
         <tag>双指针</tag>
         <tag>二分查找</tag>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -128,41 +152,6 @@
       <tags>
         <tag>leetcode</tag>
         <tag>动态规划</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode-offer55-I</title>
-    <url>/blog/2020/07/27/leetcode-offer55-I/</url>
-    <content><![CDATA[<blockquote>
-<p>输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。</p>
-<p>例如：</p>
-<p>给定二叉树 <code>[3,9,20,null,null,15,7]</code>，</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   3</span><br><span class="line">  &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">   &#x2F;  \</span><br><span class="line">  15   7</span><br></pre></td></tr></table></figure>
-
-
-<p>返回它的最大深度 3 。</p>
-<p><strong>提示：</strong></p>
-<p><code>节点总数 &lt;= 10000</code></p>
-</blockquote>
-<p><strong>题解</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> leftDepth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(root.left)) &#123;</span><br><span class="line">            leftDepth = maxDepth(root.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> rightDepth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(root.right)) &#123;</span><br><span class="line">            rightDepth = maxDepth(root.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> rootDepth = Math.max(leftDepth, rightDepth) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> rootDepth;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">                                   |</span><br><span class="line">                                   |</span><br><span class="line">                                  \|/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        LinkedList&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList();</span><br><span class="line">        queue.offer(root);</span><br><span class="line">        <span class="keyword">int</span> maxDepth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> size = queue.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">                TreeNode node = queue.poll();</span><br><span class="line">                <span class="keyword">if</span> (!Objects.isNull(node.left)) &#123;</span><br><span class="line">                    queue.offer(node.left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (!Objects.isNull(node.right)) &#123;</span><br><span class="line">                    queue.offer(node.right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            maxDepth++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxDepth;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>思考</strong></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">树的遍历可分为，其中前三种为DFS（深度优先搜索），最后一种为BFS（广度优先搜索）</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>前序遍历：根结点 --&gt; 左子树 --&gt; 右子树</span><br><span class="line"><span class="bullet">2. </span>中序遍历：左子树 --&gt; 根结点 --&gt; 右子树</span><br><span class="line"><span class="bullet">3. </span>后序遍历：左子树 --&gt; 右子树 --&gt; 根结点</span><br><span class="line"><span class="bullet">4. </span>层次遍历：只需按层次遍历即可</span><br><span class="line"></span><br><span class="line">题解1 采用DFS深度优先搜索对树进行后序遍历，参考下列示意图</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh5ojez1eyj30tt0me75j.jpg" alt="Picture1.png"></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">题解2 采用BFS，需要借助队列，逐层遍历，每遍历完一层，深度加1，空间复杂度稍高</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-        <tag>二叉树</tag>
-        <tag>DFS</tag>
-        <tag>BFS</tag>
-        <tag>后序遍历</tag>
       </tags>
   </entry>
   <entry>
@@ -255,6 +244,54 @@
       </tags>
   </entry>
   <entry>
+    <title>leetcode-offer55-I</title>
+    <url>/blog/2020/07/27/leetcode-offer55-I/</url>
+    <content><![CDATA[<blockquote>
+<p>输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。</p>
+<p>例如：</p>
+<p>给定二叉树 <code>[3,9,20,null,null,15,7]</code>，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   3</span><br><span class="line">  &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">   &#x2F;  \</span><br><span class="line">  15   7</span><br></pre></td></tr></table></figure>
+
+
+<p>返回它的最大深度 3 。</p>
+<p><strong>提示：</strong></p>
+<p><code>节点总数 &lt;= 10000</code></p>
+</blockquote>
+<p><strong>题解</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> leftDepth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(root.left)) &#123;</span><br><span class="line">            leftDepth = maxDepth(root.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> rightDepth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(root.right)) &#123;</span><br><span class="line">            rightDepth = maxDepth(root.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> rootDepth = Math.max(leftDepth, rightDepth) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> rootDepth;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">                                   |</span><br><span class="line">                                   |</span><br><span class="line">                                  \|/</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        LinkedList&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList();</span><br><span class="line">        queue.offer(root);</span><br><span class="line">        <span class="keyword">int</span> maxDepth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> size = queue.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">                TreeNode node = queue.poll();</span><br><span class="line">                <span class="keyword">if</span> (!Objects.isNull(node.left)) &#123;</span><br><span class="line">                    queue.offer(node.left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (!Objects.isNull(node.right)) &#123;</span><br><span class="line">                    queue.offer(node.right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            maxDepth++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxDepth;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>思考</strong></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">树的遍历可分为，其中前三种为DFS（深度优先搜索），最后一种为BFS（广度优先搜索）</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>前序遍历：根结点 --&gt; 左子树 --&gt; 右子树</span><br><span class="line"><span class="bullet">2. </span>中序遍历：左子树 --&gt; 根结点 --&gt; 右子树</span><br><span class="line"><span class="bullet">3. </span>后序遍历：左子树 --&gt; 右子树 --&gt; 根结点</span><br><span class="line"><span class="bullet">4. </span>层次遍历：只需按层次遍历即可</span><br><span class="line"></span><br><span class="line">题解1 采用DFS深度优先搜索对树进行后序遍历，参考下列示意图</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gh5ojez1eyj30tt0me75j.jpg" alt="Picture1.png"></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">题解2 采用BFS，需要借助队列，逐层遍历，每遍历完一层，深度加1，空间复杂度稍高</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>二叉树</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
+        <tag>后序遍历</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欢迎</title>
+    <url>/blog/2020/04/01/%E6%AC%A2%E8%BF%8E/</url>
+    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(<span class="string">"欢迎来到我的国度！！！"</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>welcome</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>动态代理-cglib与jdk方式差异解析</title>
     <url>/blog/2020/07/12/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86-cglib%E4%B8%8Ejdk%E6%96%B9%E5%BC%8F%E5%B7%AE%E5%BC%82%E8%A7%A3%E6%9E%90/</url>
     <content><![CDATA[<h2 id="两种代理模式差异"><a href="#两种代理模式差异" class="headerlink" title="两种代理模式差异"></a>两种代理模式差异</h2><table>
@@ -314,43 +351,6 @@
       <tags>
         <tag>动态代理</tag>
         <tag>性能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>leetcode-04.02</title>
-    <url>/blog/2020/07/27/leetcode-04-02/</url>
-    <content><![CDATA[<blockquote>
-<p>给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。</p>
-<p><strong>示例:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定有序数组: [-10,-3,0,5,9],</span><br><span class="line"></span><br><span class="line">一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      0 </span><br><span class="line">     &#x2F; \ </span><br><span class="line">   -3   9 </span><br><span class="line">   &#x2F;   &#x2F; </span><br><span class="line"> -10  5 </span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>题解</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">sortedArrayToBST</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> buildNode(<span class="number">0</span>, nums.length - <span class="number">1</span>, nums);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">buildNode</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span> end, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (begin == end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> TreeNode(nums[end]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (begin &gt; end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> midIndex = (begin + end + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(nums[midIndex]);</span><br><span class="line">        node.left = buildNode(begin, midIndex - <span class="number">1</span>, nums);</span><br><span class="line">        node.right = buildNode(midIndex + <span class="number">1</span>, end, nums);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>思考</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 在求数组的中位索引的时候，主要在begin和end这两个索引在求和为奇数的时，会导致最后生成的BST的某个子树的左节点大于右节点，因此在求中位索引的时候，需要在begin和end求和基础上再加1再求中位索引</span><br><span class="line">2. 在使用递归生成左右子节点的时候，方法入参的begin和end都需要注意排除已经成为节点的数的索引</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-        <tag>递归</tag>
-        <tag>二叉树</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>欢迎</title>
-    <url>/blog/2020/04/01/%E6%AC%A2%E8%BF%8E/</url>
-    <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(<span class="string">"欢迎来到我的国度！！！"</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>welcome</tag>
       </tags>
   </entry>
 </search>
