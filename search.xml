@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>github技术小册</title>
-    <url>/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/</url>
-    <content><![CDATA[<p>日常开发工作中的一些技术心得：</p>
-<p><a href="https://github.com/MrRRRabbit/daydaynote" target="_blank" rel="noopener">传送门</a></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-        <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/blog/2020/03/31/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -33,27 +19,17 @@
 ]]></content>
   </entry>
   <entry>
-    <title>leetcode-04.02</title>
-    <url>/blog/2020/07/27/leetcode-04-02/</url>
-    <content><![CDATA[<blockquote>
-<p>给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。</p>
-<p><strong>示例:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定有序数组: [-10,-3,0,5,9],</span><br><span class="line"></span><br><span class="line">一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      0 </span><br><span class="line">     &#x2F; \ </span><br><span class="line">   -3   9 </span><br><span class="line">   &#x2F;   &#x2F; </span><br><span class="line"> -10  5 </span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>题解</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">sortedArrayToBST</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> buildNode(<span class="number">0</span>, nums.length - <span class="number">1</span>, nums);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">buildNode</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span> end, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (begin == end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> TreeNode(nums[end]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (begin &gt; end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> midIndex = (begin + end + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(nums[midIndex]);</span><br><span class="line">        node.left = buildNode(begin, midIndex - <span class="number">1</span>, nums);</span><br><span class="line">        node.right = buildNode(midIndex + <span class="number">1</span>, end, nums);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>思考</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 在求数组的中位索引的时候，主要在begin和end这两个索引在求和为奇数的时，会导致最后生成的BST的某个子树的左节点大于右节点，因此在求中位索引的时候，需要在begin和end求和基础上再加1再求中位索引</span><br><span class="line">2. 在使用递归生成左右子节点的时候，方法入参的begin和end都需要注意排除已经成为节点的数的索引</span><br></pre></td></tr></table></figure>
-
+    <title>github技术小册</title>
+    <url>/blog/2020/04/07/github%E6%8A%80%E6%9C%AF%E5%B0%8F%E5%86%8C/</url>
+    <content><![CDATA[<p>日常开发工作中的一些技术心得：</p>
+<p><a href="https://github.com/MrRRRabbit/daydaynote" target="_blank" rel="noopener">传送门</a></p>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>笔记</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
-        <tag>递归</tag>
-        <tag>二叉树</tag>
+        <tag>github</tag>
+        <tag>技术</tag>
       </tags>
   </entry>
   <entry>
@@ -88,6 +64,30 @@
 </blockquote>
 <p>题解</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getLonelyNodes</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; results = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> results;</span><br><span class="line">        &#125;</span><br><span class="line">        fetchNode(root, results);</span><br><span class="line">        <span class="keyword">return</span> results;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fetchNode</span><span class="params">(TreeNode node, List&lt;Integer&gt; results)</span> </span>&#123;</span><br><span class="line">        TreeNode left = node.left;</span><br><span class="line">        TreeNode right = node.right;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(left) &amp;&amp; !Objects.isNull(right)) &#123;</span><br><span class="line">            results.add(right.val);</span><br><span class="line">            fetchNode(right, results);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(left) &amp;&amp; Objects.isNull(right)) &#123;</span><br><span class="line">            results.add(left.val);</span><br><span class="line">            fetchNode(left, results);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!Objects.isNull(left) &amp;&amp; !Objects.isNull(right)) &#123;</span><br><span class="line">            fetchNode(right, results);</span><br><span class="line">            fetchNode(left, results);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> val;</span><br><span class="line">    <span class="keyword">private</span> TreeNode left;</span><br><span class="line">    <span class="keyword">private</span> TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="keyword">int</span> val) &#123;</span><br><span class="line">        <span class="keyword">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="keyword">int</span> val, TreeNode left, TreeNode right) &#123;</span><br><span class="line">        <span class="keyword">this</span>.val = val;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>递归</tag>
+        <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode-04.02</title>
+    <url>/blog/2020/07/27/leetcode-04-02/</url>
+    <content><![CDATA[<blockquote>
+<p>给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。</p>
+<p><strong>示例:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定有序数组: [-10,-3,0,5,9],</span><br><span class="line"></span><br><span class="line">一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      0 </span><br><span class="line">     &#x2F; \ </span><br><span class="line">   -3   9 </span><br><span class="line">   &#x2F;   &#x2F; </span><br><span class="line"> -10  5 </span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>题解</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">sortedArrayToBST</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> buildNode(<span class="number">0</span>, nums.length - <span class="number">1</span>, nums);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">buildNode</span><span class="params">(<span class="keyword">int</span> begin, <span class="keyword">int</span> end, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (begin == end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> TreeNode(nums[end]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (begin &gt; end) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> midIndex = (begin + end + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(nums[midIndex]);</span><br><span class="line">        node.left = buildNode(begin, midIndex - <span class="number">1</span>, nums);</span><br><span class="line">        node.right = buildNode(midIndex + <span class="number">1</span>, end, nums);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>思考</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 在求数组的中位索引的时候，主要在begin和end这两个索引在求和为奇数的时，会导致最后生成的BST的某个子树的左节点大于右节点，因此在求中位索引的时候，需要在begin和end求和基础上再加1再求中位索引</span><br><span class="line">2. 在使用递归生成左右子节点的时候，方法入参的begin和end都需要注意排除已经成为节点的数的索引</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -155,39 +155,6 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode-offer27</title>
-    <url>/blog/2020/07/27/leetcode-offer27/</url>
-    <content><![CDATA[<blockquote>
-<p>请完成一个函数，输入一个二叉树，该函数输出它的镜像。</p>
-<p><strong>例如输入：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">        4</span><br><span class="line">      &#x2F;   \</span><br><span class="line">    2     7</span><br><span class="line">  &#x2F; \   &#x2F; \</span><br><span class="line">1   3 6   9</span><br></pre></td></tr></table></figure>
-
-<p><strong>镜像输出：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">        4</span><br><span class="line">      &#x2F;   \</span><br><span class="line">    7     2</span><br><span class="line">  &#x2F; \   &#x2F; \</span><br><span class="line">9   6 3   1</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root &#x3D; [4,2,7,1,3,6,9]</span><br><span class="line">输出：[4,7,2,9,6,3,1]</span><br></pre></td></tr></table></figure>
-
-<p><strong>限制：</strong></p>
-<p><code>0 &lt;= 节点个数 &lt;= 1000</code></p>
-</blockquote>
-<p>题解</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">mirrorTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root.left) &amp;&amp; Objects.isNull(root.right)) &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode temp = root.left;</span><br><span class="line">        root.left = root.right;</span><br><span class="line">        root.right = temp;</span><br><span class="line">        mirrorTree(root.left);</span><br><span class="line">        mirrorTree(root.right);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-        <tag>递归</tag>
-        <tag>二叉树</tag>
-        <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>leetcode-offer55-I</title>
     <url>/blog/2020/07/27/leetcode-offer55-I/</url>
     <content><![CDATA[<blockquote>
@@ -223,21 +190,26 @@
       </tags>
   </entry>
   <entry>
-    <title>leetcode-offer617</title>
-    <url>/blog/2020/07/28/leetcode-offer617/</url>
+    <title>leetcode-offer27</title>
+    <url>/blog/2020/07/27/leetcode-offer27/</url>
     <content><![CDATA[<blockquote>
-<p>给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。</p>
-<p>你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: </span><br><span class="line">	Tree 1                     Tree 2                  </span><br><span class="line">          1                         2                             </span><br><span class="line">         &#x2F; \                       &#x2F; \                            </span><br><span class="line">        3   2                     1   3                        </span><br><span class="line">       &#x2F;                           \   \                      </span><br><span class="line">      5                             4   7                  </span><br><span class="line">输出: </span><br><span class="line">合并后的树:</span><br><span class="line">	     3</span><br><span class="line">	    &#x2F; \</span><br><span class="line">	   4   5</span><br><span class="line">	  &#x2F; \   \ </span><br><span class="line">	 5   4   7</span><br></pre></td></tr></table></figure>
+<p>请完成一个函数，输入一个二叉树，该函数输出它的镜像。</p>
+<p><strong>例如输入：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">        4</span><br><span class="line">      &#x2F;   \</span><br><span class="line">    2     7</span><br><span class="line">  &#x2F; \   &#x2F; \</span><br><span class="line">1   3 6   9</span><br></pre></td></tr></table></figure>
 
-<p><strong>注意:</strong> 合并必须从两个树的根节点开始。</p>
+<p><strong>镜像输出：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">        4</span><br><span class="line">      &#x2F;   \</span><br><span class="line">    7     2</span><br><span class="line">  &#x2F; \   &#x2F; \</span><br><span class="line">9   6 3   1</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：root &#x3D; [4,2,7,1,3,6,9]</span><br><span class="line">输出：[4,7,2,9,6,3,1]</span><br></pre></td></tr></table></figure>
+
+<p><strong>限制：</strong></p>
+<p><code>0 &lt;= 节点个数 &lt;= 1000</code></p>
 </blockquote>
-<p><strong>题解</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> TreeNode <span class="title">mergeTrees</span><span class="params">(TreeNode t1, TreeNode t2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(t1)) &#123;</span><br><span class="line">            <span class="keyword">return</span> t2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(t2)) &#123;</span><br><span class="line">            <span class="keyword">return</span> t1;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode nodeMerged = <span class="keyword">new</span> TreeNode();</span><br><span class="line">        nodeMerged.val = t1.val + t2.val;</span><br><span class="line">        nodeMerged.left = mergeTrees(t1.left, t2.left);</span><br><span class="line">        nodeMerged.right = mergeTrees(t1.right, t2.right);</span><br><span class="line">        <span class="keyword">return</span> nodeMerged;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">                                   |</span><br><span class="line">                                   |</span><br><span class="line">                                  \|/</span><br><span class="line">                                     </span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">mergeTrees</span><span class="params">(TreeNode t1, TreeNode t2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(t1)) &#123;</span><br><span class="line">            <span class="keyword">return</span> t2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(t2)) &#123;</span><br><span class="line">            <span class="keyword">return</span> t1;</span><br><span class="line">        &#125;</span><br><span class="line">        LinkedList&lt;TreeNode[]&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        stack.push(<span class="keyword">new</span> TreeNode[]&#123;t1, t2&#125;);</span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">            TreeNode[] nodes = stack.pop();</span><br><span class="line">            <span class="keyword">if</span> (Objects.isNull(nodes[<span class="number">0</span>]) || Objects.isNull(nodes[<span class="number">1</span>])) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            nodes[<span class="number">0</span>].val += nodes[<span class="number">1</span>].val;</span><br><span class="line">            <span class="keyword">if</span> (!Objects.isNull(nodes[<span class="number">0</span>].left)) &#123;</span><br><span class="line">                stack.push(<span class="keyword">new</span> TreeNode[]&#123;nodes[<span class="number">0</span>].left, nodes[<span class="number">1</span>].left&#125;);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                nodes[<span class="number">0</span>].left = nodes[<span class="number">1</span>].left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!Objects.isNull(nodes[<span class="number">0</span>].right)) &#123;</span><br><span class="line">                stack.push(<span class="keyword">new</span> TreeNode[]&#123;nodes[<span class="number">0</span>].right, nodes[<span class="number">1</span>].right&#125;);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                nodes[<span class="number">0</span>].right = nodes[<span class="number">1</span>].right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> t1;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>思考</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解1 逻辑简洁，更好理解</span><br><span class="line">题解2 中辅助的堆也可以换成队列，除了处理的顺序不一样外，其他没有差别</span><br><span class="line">时间复杂度相同，取决于两颗树中最大的深度</span><br></pre></td></tr></table></figure>
+<p>题解</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">mirrorTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(root.left) &amp;&amp; Objects.isNull(root.right)) &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode temp = root.left;</span><br><span class="line">        root.left = root.right;</span><br><span class="line">        root.right = temp;</span><br><span class="line">        mirrorTree(root.left);</span><br><span class="line">        mirrorTree(root.right);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -247,6 +219,7 @@
         <tag>leetcode</tag>
         <tag>递归</tag>
         <tag>二叉树</tag>
+        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -338,6 +311,33 @@
       <tags>
         <tag>leetcode</tag>
         <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode-offer617</title>
+    <url>/blog/2020/07/28/leetcode-offer617/</url>
+    <content><![CDATA[<blockquote>
+<p>给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。</p>
+<p>你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为 NULL 的节点将直接作为新二叉树的节点。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: </span><br><span class="line">	Tree 1                     Tree 2                  </span><br><span class="line">          1                         2                             </span><br><span class="line">         &#x2F; \                       &#x2F; \                            </span><br><span class="line">        3   2                     1   3                        </span><br><span class="line">       &#x2F;                           \   \                      </span><br><span class="line">      5                             4   7                  </span><br><span class="line">输出: </span><br><span class="line">合并后的树:</span><br><span class="line">	     3</span><br><span class="line">	    &#x2F; \</span><br><span class="line">	   4   5</span><br><span class="line">	  &#x2F; \   \ </span><br><span class="line">	 5   4   7</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:</strong> 合并必须从两个树的根节点开始。</p>
+</blockquote>
+<p><strong>题解</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> TreeNode <span class="title">mergeTrees</span><span class="params">(TreeNode t1, TreeNode t2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(t1)) &#123;</span><br><span class="line">            <span class="keyword">return</span> t2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(t2)) &#123;</span><br><span class="line">            <span class="keyword">return</span> t1;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode nodeMerged = <span class="keyword">new</span> TreeNode();</span><br><span class="line">        nodeMerged.val = t1.val + t2.val;</span><br><span class="line">        nodeMerged.left = mergeTrees(t1.left, t2.left);</span><br><span class="line">        nodeMerged.right = mergeTrees(t1.right, t2.right);</span><br><span class="line">        <span class="keyword">return</span> nodeMerged;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">                                   |</span><br><span class="line">                                   |</span><br><span class="line">                                  \|/</span><br><span class="line">                                     </span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">mergeTrees</span><span class="params">(TreeNode t1, TreeNode t2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(t1)) &#123;</span><br><span class="line">            <span class="keyword">return</span> t2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(t2)) &#123;</span><br><span class="line">            <span class="keyword">return</span> t1;</span><br><span class="line">        &#125;</span><br><span class="line">        LinkedList&lt;TreeNode[]&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        stack.push(<span class="keyword">new</span> TreeNode[]&#123;t1, t2&#125;);</span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">            TreeNode[] nodes = stack.pop();</span><br><span class="line">            <span class="keyword">if</span> (Objects.isNull(nodes[<span class="number">0</span>]) || Objects.isNull(nodes[<span class="number">1</span>])) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            nodes[<span class="number">0</span>].val += nodes[<span class="number">1</span>].val;</span><br><span class="line">            <span class="keyword">if</span> (!Objects.isNull(nodes[<span class="number">0</span>].left)) &#123;</span><br><span class="line">                stack.push(<span class="keyword">new</span> TreeNode[]&#123;nodes[<span class="number">0</span>].left, nodes[<span class="number">1</span>].left&#125;);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                nodes[<span class="number">0</span>].left = nodes[<span class="number">1</span>].left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!Objects.isNull(nodes[<span class="number">0</span>].right)) &#123;</span><br><span class="line">                stack.push(<span class="keyword">new</span> TreeNode[]&#123;nodes[<span class="number">0</span>].right, nodes[<span class="number">1</span>].right&#125;);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                nodes[<span class="number">0</span>].right = nodes[<span class="number">1</span>].right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> t1;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>思考</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">题解1 逻辑简洁，更好理解</span><br><span class="line">题解2 中辅助的堆也可以换成队列，除了处理的顺序不一样外，其他没有差别</span><br><span class="line">时间复杂度相同，取决于两颗树中最大的深度</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>递归</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
